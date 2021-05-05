@@ -1,10 +1,10 @@
 import React from 'react'
-import './assests/nav.css'
+import './nav.css'
 import {NavLink} from 'react-router-dom'
-import {AiOutlineHome, AiOutlineHeart, AiOutlineShopping, AiOutlineUser} from "react-icons/ai";
-import { MdVideoLibrary, MdWatchLater, MdSearch } from "react-icons/md";
+import { BiLike } from "react-icons/bi";
+import { MdVideoLibrary, MdWatchLater } from "react-icons/md";
 import { TiHome } from "react-icons/ti";
-import { IoSearch } from "react-icons/io5";
+// import { IoSearch } from "react-icons/io5";
 
 export function Nav() {
     return (
@@ -33,7 +33,7 @@ export function Nav() {
                         </li>
                         <li>
                             <NavLink to='/' className="link">
-                                Search
+                                Liked Videos
                             </NavLink>
                         </li>
                         
@@ -57,7 +57,7 @@ export function Nav() {
                 </li>
                 <li>
                     <NavLink to='/' className="link">
-                        <IoSearch className="icon" />
+                        <BiLike className="icon" />
                     </NavLink>
                 </li>
                 <li>

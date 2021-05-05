@@ -1,12 +1,26 @@
 import React from 'react'
-import { Nav } from "../../Components/index";
+import "./assests/home.css"
+import { Nav, VideoCard } from "../../Components/index";
+import { videoData } from '../../data'
 
 export function Home() {
     return (
         <>
             <Nav />
-            <div style={{margin: "5rem"}}>
-                <h1>Video Library</h1>
+            {/* <div className="video-page">
+                <VideoCard />
+                <VideoCard />
+                <VideoCard />
+                <VideoCard />
+                <VideoCard />
+                <VideoCard />
+                <VideoCard />
+                <VideoCard />
+            </div> */}
+            <div className="video-page">
+                {
+                    videoData.map(item => <VideoCard data={item} />)
+                }
             </div>
         </>
     )
