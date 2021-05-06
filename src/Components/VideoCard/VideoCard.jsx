@@ -1,17 +1,19 @@
 import React from 'react'
 import ReactPlayer from "react-player";
 import './videocard.css'
+import { useNavigate } from "react-router-dom";
 
 export function VideoCard(props) {
 
     const { data } = props;
+    const navigate = useNavigate();
 
     return (
-        <div className="card">
-            <ReactPlayer 
-                url={data.url}
-                controls='true' 
+        <div className="card" onClick={() => navigate(`/watch/${data.id}`)}>
+            <ReactPlayer
+                light='true'
                 className='player'
+                style={{backgroundImage: `url(${data.img})`}}
             />
             <div className="card-text">
                 <p className="card-primary-text">{data.title}</p>

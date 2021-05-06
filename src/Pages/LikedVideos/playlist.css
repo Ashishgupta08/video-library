@@ -1,0 +1,23 @@
+.playlist-page{
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.8rem;
+}
+
+h1{
+    margin: 0 !important;
+    margin-top: 5rem;
+    color: var(--color-primary);
+}
+
+@media only screen and (min-width: 768px) {
+
+    .playlist-page{
+        padding: 6rem 3rem 1rem 3rem;
+        margin-bottom: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}

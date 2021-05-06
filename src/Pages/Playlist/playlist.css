@@ -1,0 +1,45 @@
+.playlist-page{
+    background-color: var(--color-primary);
+    margin-bottom: 2.8rem;
+}
+
+.container{
+    background-color: var(--color-text);
+    border-radius: 1rem;
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    margin: 0 !important;
+    color: var(--color-green);
+}
+
+.playlist{
+    margin-bottom: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-videos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .playlist-page{
+        padding: 6rem 3rem 1rem 3rem;
+        margin-bottom: 0;
+    }
+
+    .playlist-videos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}

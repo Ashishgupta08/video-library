@@ -9,6 +9,9 @@
     width: 100% !important;
     height: 203px !important;
     margin: 0;
+    /* background-image: url("https://cdn.pixabay.com/photo/2016/04/19/01/00/chalkboard-1337809_960_720.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .card-text{
