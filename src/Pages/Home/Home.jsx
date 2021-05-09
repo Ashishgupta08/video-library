@@ -9,7 +9,7 @@ export function Home() {
             <Nav />
             <div className="video-page">
                 {
-                    videoData.map(item => <VideoCard data={item} />)
+                    videoData.map(item => <VideoCard data={item} key={item.id} />)
                 }
             </div>
         </>

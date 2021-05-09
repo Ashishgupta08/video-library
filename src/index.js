@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
-import { LikeProvider } from "./Contexts/like-context";
-import { WatchLaterProvider } from "./Contexts/watch-later";
-import { PlaylistProvider } from "./Contexts/playlist-context";
+import { LikeProvider, WatchLaterProvider, PlaylistProvider } from "./Contexts/index";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -44,10 +44,6 @@ export function VideoPlayer() {
         }
     };
 
-    const addToPlaylist = (id) => {
-
-    }
-
     useEffect(() => {
         setVideo(videoData.find(item => item.id === id));
         if(likedVideos.find(item => item.id === id)){
