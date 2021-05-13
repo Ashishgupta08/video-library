@@ -4,6 +4,7 @@ import { Nav, VideoCard } from "../../Components/index";
 import { videoData } from '../../data'
 
 export function Home() {
+
     return (
         <>
             <Nav />
