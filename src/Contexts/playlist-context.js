@@ -1,14 +1,24 @@
-import React, { createContext, useContext, useState } from 'react';
-import { playlist } from "../data";
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import axios from 'axios';
+import { useAuth } from "./authContext";
+import { playlistReducer } from "../Reducers";
 
 const PlaylistContext = createContext();
 
 export function PlaylistProvider({ children }){
 
-    const [playlists, setPlaylists] = useState(playlist)
+    const [playlistState, playlistDispatch] = useReducer(playlistReducer, { playlist: [] })
+    const { authState } = useAuth();
+
+    useEffect(()=>{
+        (async function(){
+            const { data: { result } } = await axios.get("https://video-library-backend.ashishgupta08.repl.co/playlist", { headers: { Authorization: authState.token } });
+            playlistDispatch({ type: "LOAD", payload: result })
+        })()
+    },[authState])
 
     return(
-        <PlaylistContext.Provider value={{ playlists, setPlaylists }}>
+        <PlaylistContext.Provider value={{ playlistState, playlistDispatch }}>
             {children}
         </PlaylistContext.Provider>
     )

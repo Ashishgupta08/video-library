@@ -1,16 +1,19 @@
 import './App.css';
-import { Home, Playlist, LikedVideos, WatchLater, VideoPlayer } from "./Pages";
 import { Route, Routes } from "react-router-dom";
+import { Home, Playlist, LikedVideos, SavedVideos, VideoPlayer, Login, Signup } from "./Pages";
+import { PrivateRoute } from "./PrivateRoute/PrivateRoute"
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/likedvideos' element={<LikedVideos />}></Route>
-        <Route path='/playlists' element={<Playlist />}></Route>
-        <Route path='/watchlater' element={<WatchLater />}></Route>
-        <Route path='/watch/:id' element={<VideoPlayer />}></Route>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/watch/:id' element={<VideoPlayer />} />
+        <PrivateRoute path='/likedvideos' element={<LikedVideos />} />
+        <PrivateRoute path='/playlists' element={<Playlist />} />
+        <PrivateRoute path='/savedvideos' element={<SavedVideos />} />
       </Routes>
     </div>
   );

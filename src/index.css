@@ -5,14 +5,15 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-p{
+p, h1, h2{
   margin: 0;
 }
 
 :root{
   --color-primary: #131417;
-  --color-green: #08BD80;
-  --color-darkGreen: #07a872;
+  --color-secondary: #0078D4;
+  --color-secondary-light: #69AFE5;
   --color-gray: #202022;
+  --color-lightGray: #7e8ba3;
   --color-text: #EBEBF5;
 }

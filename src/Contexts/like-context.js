@@ -1,19 +1,24 @@
-import React, { createContext, useContext, useState } from 'react';
-import { likedVideos as likedIds, videoData } from "../data";
+import axios from 'axios';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import { useAuth } from "./authContext";
+import { likeReducer } from "../Reducers";
 
 const LikedVideosContext = createContext();
 
 export function LikeProvider({ children }){
 
-    let liked = videoData.map(video => {
-        return likedIds.filter(item => item === video.id).length !== 0 && video
-        })
-    const data = liked.filter(item=>item !== false)
+    const [likeState, likeDispatch] = useReducer(likeReducer, { likedVideos: [] })
+    const { authState } = useAuth();
 
-    const [likedVideos, setLikedVideos] = useState(data)
-    console.log(likedVideos);
+    useEffect(()=>{
+        (async function(){
+            const { data: { result } } = await axios.get("https://video-library-backend.ashishgupta08.repl.co/likedVideos", { headers: { Authorization: authState.token } });
+            likeDispatch({ type: "LOAD", payload: result })
+        })()
+    },[authState])
+
     return(
-        <LikedVideosContext.Provider value={{ likedVideos, setLikedVideos }}>
+        <LikedVideosContext.Provider value={{ likeState, likeDispatch }}>
             {children}
         </LikedVideosContext.Provider>
     )

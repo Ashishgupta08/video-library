@@ -7,9 +7,8 @@ export function VideoCard(props) {
 
     const { data } = props;
     const navigate = useNavigate();
-
     return (
-        <div className="card" onClick={() => navigate(`/watch/${data.id}`)}>
+        <div className="card" onClick={() => navigate(`/watch/${data.videoId}`)}>
             <ReactPlayer
                 light='true'
                 className='player'

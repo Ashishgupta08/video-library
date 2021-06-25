@@ -11,6 +11,12 @@
     margin-bottom: 2.8rem;
 }
 
+.add-video{
+    text-align: center;
+    margin: auto;
+    color: var(--color-lightGray);
+}
+
 @media only screen and (min-width: 768px) {
 
     .like-page{

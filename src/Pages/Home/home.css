@@ -1,5 +1,6 @@
 .video-page{
     background-color: var(--color-primary);
+    min-height: 520px;
     display: flex;
     flex-direction: column;
     margin-bottom: 2.8rem;
@@ -13,6 +14,7 @@ h1{
 
     .video-page{
         padding: 6rem 3rem 1rem 3rem;
+        min-height: 100vh;
         margin-bottom: 0;
         flex-direction: row;
         flex-wrap: wrap;

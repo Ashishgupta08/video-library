@@ -1,16 +1,18 @@
-import React from 'react'
+import { React } from 'react'
 import "./home.css"
 import { Nav, VideoCard } from "../../Components/index";
-import { videoData } from '../../data'
+import { useVideos } from "../../Contexts";
 
 export function Home() {
+
+    const { videos } = useVideos();
 
     return (
         <>
             <Nav />
             <div className="video-page">
                 {
-                    videoData.map(item => <VideoCard data={item} key={item.id} />)
+                    videos.map(video => <VideoCard data={video} key={video._id} />)
                 }
             </div>
         </>
