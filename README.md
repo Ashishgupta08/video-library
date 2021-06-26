@@ -16,34 +16,26 @@ Live URL - [learnit](https://learnit-app.netlify.app/)
 
 ## Preview
 
-`Home`
+* Home
+<img src='./src/Utils/images/home.png' alt='home' />
 
-![home](https://i.ibb.co/hRxgs1T/home.png)
+* Login
+<img src='./src/Utils/images/login.png' alt='login' />
 
- `Login`
+* SignUp
+<img src='./src/Utils/images/signup.png' alt='signup' />
 
-![login](https://i.ibb.co/wM6Wq1R/login.png)
+* Profile
+<img src='./src/Utils/images/profile.png' alt='profile' />
 
-`SignUp`
+* Saved Videos
+<img src='./src/Utils/images/savedVideos.png' alt='savedVideos' />
 
-![signup](https://i.ibb.co/jwnX59c/signup.png)
+* Playlists
+<img src='./src/Utils/images/playlist.png' alt='playlist' />
 
-`Saved Videos`
+* Liked Videos
+<img src='./src/Utils/images/likedVideos.png' alt='likedVideos' />
 
-![savedVideos](https://i.ibb.co/2jnHCRF/saved-Videos.png)
-
-`Playlists`
-
-![playlist](https://i.ibb.co/tmKkztj/playlist.png)
-
-`Liked Videos`
-
-![likedVideos](https://i.ibb.co/ctNsNbW/liked-Videos.png)
-
-`Profile`
-
-![profile](https://i.ibb.co/dDSmJ0S/profile.png)
-
-`More Screens`
-
-![moreScreens](https://i.ibb.co/DMjKmRh/no-Playlist.png)
+* More Screens
+<img src='./src/Utils/images/noPlaylist.png' alt='noPlaylist' />
