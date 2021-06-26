@@ -19,7 +19,7 @@ export function Playlist() {
     const deletePlaylist = async (id) => {
         try{
             if(authState.isUserLoggedIn){
-                const { data: { result } } = await axios.delete("https://video-library-backend.ashishgupta08.repl.co/playlist", { headers: { Authorization: authState.token }, data: { playlistId: id } });
+                await axios.delete("https://video-library-backend.ashishgupta08.repl.co/playlist", { headers: { Authorization: authState.token }, data: { playlistId: id } });
                 playlistDispatch({ type: "DELETE-PLAYLIST", payload: id });
                 openSuccessSnackbar('Playlist deleted successfully.', 4000)
             }else{
