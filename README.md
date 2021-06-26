@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# learnit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Video Library App
 
-## Available Scripts
+Live URL - [learnit](https://learnit-app.netlify.app/)
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+* React
+* Express
+* MongoDB
+* Node
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
+*  Authentication with `JWT`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Preview
 
-### `npm test`
+`Home`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![home](https://i.ibb.co/hRxgs1T/home.png)
 
-### `npm run build`
+ `Login`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![login](https://i.ibb.co/wM6Wq1R/login.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`SignUp`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![signup](https://i.ibb.co/jwnX59c/signup.png)
 
-### `npm run eject`
+`Saved Videos`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![savedVideos](https://i.ibb.co/2jnHCRF/saved-Videos.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Playlists`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![playlist](https://i.ibb.co/tmKkztj/playlist.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`Liked Videos`
 
-## Learn More
+![likedVideos](https://i.ibb.co/ctNsNbW/liked-Videos.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`Profile`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![profile](https://i.ibb.co/dDSmJ0S/profile.png)
 
-### Code Splitting
+`More Screens`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![moreScreens](https://i.ibb.co/DMjKmRh/no-Playlist.png)
