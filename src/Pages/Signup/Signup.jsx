@@ -1,20 +1,44 @@
 import {React, useState} from 'react'
 import { NavLink } from "react-router-dom";
 import './signup.css';
-import { useAuth } from "../../Contexts"
+import { useAuth } from "../../Contexts";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { useSnackbar } from 'react-simple-snackbar';
+import { loginError } from "../../Utils/snackbar";
 
 export function Signup() {
 
-    const { signup } = useAuth();
+    const { authDispatch } = useAuth();
+    const { state } = useLocation();
+    const navigate = useNavigate();
     const [credentials, setCredentials] = useState({username: "", password: "", confirmPassword: "", email: "", name: ""});
+    const [openSnackbar] = useSnackbar(loginError);
+
+    const signup = async (credentials) => {
+        try {
+            console.log(credentials)
+            const { data: { result }} = await axios.post("https://video-library-backend.ashishgupta08.repl.co/user/signup", { username:credentials.username, password:credentials.password, name:credentials.name, email:credentials.email } );
+            localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: result }))
+            authDispatch({ type:"LOGIN", payload: result });
+            navigate(state?.from ? state.from : "/");
+        } catch (e) {
+            if(e.response.status === 409){
+                return openSnackbar('Failed to create account. Try again.', 2000)
+            }else{
+                return openSnackbar(e.message, 2000)
+            }
+        }
+    };
+
     const signupHandler = (data) => {
         if(data.username === "" || data.password === "" || data.confirmPassword === "" || data.email === "" || data.name === ""){
-            return console.log("All fields are required.")
+            return openSnackbar('All fields are required.', 2000)
         }
         if(data.password === data.confirmPassword){
             signup(data);
         }else{
-            console.log("Password should be same.")
+            openSnackbar('Password should be same.', 2000)
         }
     }
 

@@ -1,11 +1,10 @@
 .playlist-page{
     background-color: var(--color-primary);
-    min-height: 520px;
-    padding: 0.5rem 0 0.5rem 0;
+    min-height: 35rem;
+    padding: 0.5rem 0 3rem 0;
 }
 
 .container{
-    /* background-color: var(--color-lightGray); */
     color: var(--color-text);
     border-radius: 1rem;
     margin: 0.5rem;

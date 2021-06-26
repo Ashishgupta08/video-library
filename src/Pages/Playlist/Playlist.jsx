@@ -5,22 +5,32 @@ import { useAuth, usePlaylist } from "../../Contexts";
 import './playlist.css';
 import { BsTrash } from "react-icons/bs"
 import { NavLink } from 'react-router-dom';
+import { useSnackbar } from 'react-simple-snackbar';
+import { error, success, info } from "../../Utils/snackbar";
 
 export function Playlist() {
 
     const { playlistState, playlistDispatch } = usePlaylist();
     const { authState } = useAuth();
+    const [openErrorSnackbar] = useSnackbar(error);
+    const [openSuccessSnackbar] = useSnackbar(success);
+    const [openInfoSnackbar] = useSnackbar(info);
 
     const deletePlaylist = async (id) => {
         try{
             if(authState.isUserLoggedIn){
                 const { data: { result } } = await axios.delete("https://video-library-backend.ashishgupta08.repl.co/playlist", { headers: { Authorization: authState.token }, data: { playlistId: id } });
                 playlistDispatch({ type: "DELETE-PLAYLIST", payload: id });
+                openSuccessSnackbar('Playlist deleted successfully.', 4000)
             }else{
-                console.log("Login to proceed.")
+                openInfoSnackbar('Login to proceed.', 2000)
             }
         }catch(e){
-            console.log(e.message);
+            if(e.response.status === 401){
+                return openInfoSnackbar('Login to proceed.', 2000)
+            }else{
+                return openErrorSnackbar('Failed to delete playlist.', 2000)
+            }
         }
     };
 
@@ -43,6 +53,13 @@ export function Playlist() {
                                                 <VideoCard data={video} key={video.videoId} />
                                             )
                                         })
+                                    }
+                                    {
+                                        playlist.videos.length === 0 &&
+                                        <div className="add-video" style={{margin: "0 2rem"}}>
+                                            <p>You don't have any video in this playlist.</p>
+                                            <p><NavLink to='/' className="sign-up">Explore</NavLink> and add some videos.</p>
+                                        </div>
                                     }
                                 </div>
                             </div>
