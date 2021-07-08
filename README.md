@@ -1,41 +1,37 @@
-# learnit
+# LEARNIT - Video Library App
 
-Video Library App
+### Live URL -  [LearnIt](https://learnit-app.netlify.app/)
 
-Live URL - [learnit](https://learnit-app.netlify.app/)
+### Test Credentials - 
 
-## Technologies Used
+> * username : *admin* 
+> * password : *admin*
 
-* React
-* Express
-* MongoDB
-* Node
 
-## Features
-*  Authentication with `JWT`
 
-## Preview
-
-* Home
-<img src='./src/Utils/images/home.png' alt='home' />
-
-* Login
-<img src='./src/Utils/images/login.png' alt='login' />
-
-* SignUp
-<img src='./src/Utils/images/signup.png' alt='signup' />
-
-* Profile
-<img src='./src/Utils/images/profile.png' alt='profile' />
-
-* Saved Videos
-<img src='./src/Utils/images/savedVideos.png' alt='savedVideos' />
-
-* Playlists
-<img src='./src/Utils/images/playlist.png' alt='playlist' />
-
+# Features
+* Login using JWT
+* View Profile
+* Video Streaming
 * Liked Videos
-<img src='./src/Utils/images/likedVideos.png' alt='likedVideos' />
+* Saved Vidoes
+* Create & Update Playlist
 
-* More Screens
-<img src='./src/Utils/images/noPlaylist.png' alt='noPlaylist' />
+<br>
+
+# Tech Stack
+
+
+### Front End
+* React JS
+* HTML5
+* CSS3
+
+### Back End
+* Express JS
+* MongoDB
+
+
+<br>
+
+> ### BackEnd GitHub Repo - [LearnItBackEnd](https://github.com/Ashishgupta08/video-library-backend/tree/dev)
