@@ -12,7 +12,7 @@ export function Login() {
     const { authDispatch } = useAuth();
     const { state } = useLocation();
     const navigate = useNavigate();
-    const [credentials, setCredentials] = useState({ username: "", password: "" });
+    const [credentials, setCredentials] = useState({ username: "admin", password: "admin" });
     const [openSnackbar] = useSnackbar(loginError);
 
     const login = async (credentials) => {
@@ -47,10 +47,17 @@ export function Login() {
                     <div className="box-content">
                         <h1 className="logo">learnit</h1>
                         <div className="form">
-                            <input type="test" placeholder="Username" className="login-input" required onChange={(e) => { setCredentials({ ...credentials, username: e.target.value }) }} />
-                            <input type="password" placeholder="Password" className="login-input" required onChange={(e) => { setCredentials({ ...credentials, password: e.target.value }) }} />
+                            <input type="test" placeholder="Username" className="login-input" value={credentials.username} required onChange={(e) => { setCredentials({ ...credentials, username: e.target.value }) }} />
+                            <input type="password" placeholder="Password" className="login-input" value={credentials.password} required onChange={(e) => { setCredentials({ ...credentials, password: e.target.value }) }} />
                             <button type="submit" className="btn" onClick={() => { loginHandler(credentials) }}>Login</button>
                         </div>
+                        <div>
+                            <p style={{ color: '#EBEBF5' }}>Test Credentials -
+                                <li>Username: <span className="sign-up">admin</span></li>
+                                <li>Password: <span className="sign-up">admin</span></li>
+                            </p>
+                        </div>
+                        <br />
                         <p style={{ color: '#EBEBF5' }}>
                             Don't have an account?
                         </p>

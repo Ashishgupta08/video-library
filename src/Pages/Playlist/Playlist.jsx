@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { Nav, VideoCard } from "../../Components/index";
 import { useAuth, usePlaylist } from "../../Contexts";
@@ -33,6 +33,10 @@ export function Playlist() {
             }
         }
     };
+
+    useEffect(()=>{
+        window.scroll({ top: 0, left: 0 });
+    },[])
 
     return (
         <>

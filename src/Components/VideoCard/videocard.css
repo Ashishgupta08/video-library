@@ -3,6 +3,7 @@
     margin: 0.5rem 0;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .player{

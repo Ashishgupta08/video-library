@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Nav, VideoCard } from "../../Components/index";
 import './savedVideos.css';
 import { useSavedVideos } from "../../Contexts";
@@ -7,6 +7,10 @@ import { NavLink } from 'react-router-dom';
 export function SavedVideos() {
 
     const { savedState } = useSavedVideos();
+
+    useEffect(()=>{
+        window.scroll({ top: 0, left: 0 });
+    },[])
 
     return (
         <>

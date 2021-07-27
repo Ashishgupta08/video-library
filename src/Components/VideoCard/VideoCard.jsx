@@ -16,7 +16,7 @@ export function VideoCard(props) {
             />
             <div className="card-text">
                 <p className="card-primary-text">{data.title}</p>
-                <p className="card-secondary-text">{data.views} views <b>·</b> {data.uploadDate}</p>
+                <p className="card-secondary-text">{data.views} views <b>·</b> {data.uploadDate.substr(0, 10)}</p>
             </div>
         </div>
     )

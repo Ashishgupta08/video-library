@@ -143,6 +143,7 @@ export function VideoPlayer() {
     }
 
     useEffect(() => {
+        window.scroll({ top: 0, left: 0 });
         const data = videos.find(video => video.videoId === id)
         setVideo(data);
         const isLiked = likeState.likedVideos.some(video => video.videoId === data.videoId);

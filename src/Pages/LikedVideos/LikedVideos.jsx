@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Nav, VideoCard } from "../../Components/index";
 import { useLikedVideos } from "../../Contexts/like-context";
 import { NavLink } from 'react-router-dom';
@@ -7,6 +7,11 @@ import './likedvideos.css';
 export function LikedVideos() {
 
     const { likeState } = useLikedVideos();
+
+    useEffect(()=>{
+        window.scroll({ top: 0, left: 0 });
+    },[])
+
     return (
         <>
         <Nav />
