@@ -17,18 +17,20 @@ export function Nav() {
     const { authState, logout } = useAuth();
     const navigate = useNavigate();
 
-    useEffect(()=>{
-        (async function(){
-            const { data: { result }} = await axios.get("https://video-library-backend.ashishgupta08.repl.co/user/getUserData",{ headers: { Authorization: authState.token }});
+    useEffect(() => {
+        (async function () {
+            const { data: { result } } = await axios.get("https://video-library-backend.ashishgupta08.repl.co/user/getUserData", { headers: { Authorization: authState.token } });
             setUser(result)
         }())
-    },[authState])
+    }, [authState])
 
     return (
         <>
             <nav>
                 <div className="header">
-                    <h1>Learn<span className="it">IT</span></h1>
+                    <NavLink end to='/' className="link">
+                        <h1>Learn<span className="it">IT</span></h1>
+                    </NavLink>
                 </div>
                 <div className="nav-bar">
                     <div className="nav-links">
@@ -57,13 +59,13 @@ export function Nav() {
                     </div>
                     <div>
                         <div className="profile-img">
-                            <img src="https://i.ibb.co/Ttvc03w/AS-2.png" alt="avtaar" className="avtaar sm" onClick={()=>{setOpenProfile("profile-modal")}} />
+                            <img src="https://i.ibb.co/Ttvc03w/AS-2.png" alt="avtaar" className="avtaar sm" onClick={() => { setOpenProfile("profile-modal") }} />
                         </div>
                         <div className={openProfile}>
                             <div className="profile-content">
-                                <RiCloseFill style={{float: "right", margin: "0.25rem 0.5rem", cursor: "pointer"}} onClick={()=>{setOpenProfile("open-modal")}} />
-                                {   authState.isUserLoggedIn
-                                    ? 
+                                <RiCloseFill style={{ float: "right", margin: "0.25rem 0.5rem", cursor: "pointer" }} onClick={() => { setOpenProfile("open-modal") }} />
+                                {authState.isUserLoggedIn
+                                    ?
                                     <div>
                                         <div className="profile-header">
                                             <h2>{user.name}</h2>
@@ -78,7 +80,7 @@ export function Nav() {
                                                 <p className="profile-data">{user.username}</p>
                                             </div>
                                             <div>
-                                                <button className="logout-btn" onClick={()=>{logout()}}><IoLogOutOutline className="logout-icon" />LogOut</button>
+                                                <button className="logout-btn" onClick={() => { logout() }}><IoLogOutOutline className="logout-icon" />LogOut</button>
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +90,7 @@ export function Nav() {
                                             <p>Login to continue.</p>
                                         </div>
                                         <div>
-                                            <button className="logout-btn" onClick={()=>{navigate('/login')}}>Login</button>
+                                            <button className="logout-btn" onClick={() => { navigate('/login') }}>Login</button>
                                         </div>
                                     </div>
                                 }

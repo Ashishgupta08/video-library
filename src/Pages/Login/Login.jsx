@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../../Contexts";
 import './login.css';
 import { useSnackbar } from 'react-simple-snackbar';
-import { loginError } from "../../Utils/snackbar";
+import { loginError, success } from "../../Utils/snackbar";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
@@ -14,12 +14,14 @@ export function Login() {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({ username: "admin", password: "admin" });
     const [openSnackbar] = useSnackbar(loginError);
+    const [openSuccessSnackbar] = useSnackbar(success);
 
     const login = async (credentials) => {
         try {
             const { data: { result }} = await axios.post("https://video-library-backend.ashishgupta08.repl.co/user/login", { username:credentials.username, password:credentials.password } );
             localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: result }))
             authDispatch({ type:"LOGIN", payload: result });
+            openSuccessSnackbar('Successfully logged in', 2000);
             navigate(state?.from ? state.from : "/");
         } catch (e) {
             if(e.response.status === 401){

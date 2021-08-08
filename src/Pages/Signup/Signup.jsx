@@ -5,7 +5,7 @@ import { useAuth } from "../../Contexts";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useSnackbar } from 'react-simple-snackbar';
-import { loginError } from "../../Utils/snackbar";
+import { loginError, success } from "../../Utils/snackbar";
 
 export function Signup() {
 
@@ -14,6 +14,7 @@ export function Signup() {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({username: "", password: "", confirmPassword: "", email: "", name: ""});
     const [openSnackbar] = useSnackbar(loginError);
+    const [openSuccessSnackbar] = useSnackbar(success);
 
     const signup = async (credentials) => {
         try {
@@ -21,6 +22,7 @@ export function Signup() {
             const { data: { result }} = await axios.post("https://video-library-backend.ashishgupta08.repl.co/user/signup", { username:credentials.username, password:credentials.password, name:credentials.name, email:credentials.email } );
             localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: result }))
             authDispatch({ type:"LOGIN", payload: result });
+            openSuccessSnackbar('Successfully logged in', 2000);
             navigate(state?.from ? state.from : "/");
         } catch (e) {
             if(e.response.status === 409){
