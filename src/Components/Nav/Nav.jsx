@@ -19,7 +19,7 @@ export function Nav() {
 
     useEffect(() => {
         (async function () {
-            const { data: { result } } = await axios.get("https://video-library-backend.ashishgupta08.repl.co/user/getUserData", { headers: { Authorization: authState.token } });
+            const { data: { result } } = await axios.get("https://video-library-backend-1.ashishgupta08.repl.co/user/getUserData", { headers: { Authorization: authState.token } });
             setUser(result)
         }())
     }, [authState])

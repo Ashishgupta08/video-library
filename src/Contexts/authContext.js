@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
         try {
             localStorage?.removeItem("login");
             authDispatch({ type:"LOGOUT" });
-            const { data: { result } } = await axios.get("https://video-library-backend.ashishgupta08.repl.co/video");
+            const { data: { result } } = await axios.get("https://video-library-backend-1.ashishgupta08.repl.co/video");
             setVideos(result)
             navigate("/");
         } catch (e) {

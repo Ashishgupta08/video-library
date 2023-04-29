@@ -12,7 +12,7 @@ export function PlaylistProvider({ children }){
 
     useEffect(()=>{
         (async function(){
-            const { data: { result } } = await axios.get("https://video-library-backend.ashishgupta08.repl.co/playlist", { headers: { Authorization: authState.token } });
+            const { data: { result } } = await axios.get("https://video-library-backend-1.ashishgupta08.repl.co/playlist", { headers: { Authorization: authState.token } });
             playlistDispatch({ type: "LOAD", payload: result })
         })()
     },[authState])

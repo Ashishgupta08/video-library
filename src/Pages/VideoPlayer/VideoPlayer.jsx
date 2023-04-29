@@ -35,14 +35,14 @@ export function VideoPlayer() {
         try {
             if (authState.isUserLoggedIn) {
                 if (videoPlayerState.like) {
-                    await axios.delete(`https://video-library-backend.ashishgupta08.repl.co/likedVideos`, { headers: { Authorization: authState.token }, data: { id: video._id } })
+                    await axios.delete(`https://video-library-backend-1.ashishgupta08.repl.co/likedVideos`, { headers: { Authorization: authState.token }, data: { id: video._id } })
                     likeDispatch({ type: "REMOVE-FROM-LIKEVIDEOS", payload: video });
                     videoPlayerDispatch({ type: "LIKE", payload: false });
                     openSuccessSnackbar('Removed from Liked Videos', 2000)
                 } else {
                     var postData = { id: video._id };
                     let axiosConfig = { headers: { Authorization: authState.token } };
-                    await axios.post("https://video-library-backend.ashishgupta08.repl.co/likedVideos", postData, axiosConfig)
+                    await axios.post("https://video-library-backend-1.ashishgupta08.repl.co/likedVideos", postData, axiosConfig)
                     likeDispatch({ type: "ADD-TO-LIKEVIDEOS", payload: video });
                     videoPlayerDispatch({ type: "LIKE", payload: true });
                     openSuccessSnackbar('Added to Liked Videos', 2000)
@@ -63,13 +63,13 @@ export function VideoPlayer() {
         try {
             if (authState.isUserLoggedIn) {
                 if (videoPlayerState.saved) {
-                    await axios.delete(`https://video-library-backend.ashishgupta08.repl.co/savedVideos`, { headers: { Authorization: authState.token }, data: { id: video._id } })
+                    await axios.delete(`https://video-library-backend-1.ashishgupta08.repl.co/savedVideos`, { headers: { Authorization: authState.token }, data: { id: video._id } })
                     savedDispatch({ type: "REMOVE-FROM-SAVEDVIDEOS", payload: video });
                     videoPlayerDispatch({ type: "SAVED", payload: false });
                     openSuccessSnackbar('Removed from Saved Videos', 2000)
                 } else {
                     let postData = { id: video._id };
-                    await axios.post("https://video-library-backend.ashishgupta08.repl.co/savedVideos", postData, axiosConfig)
+                    await axios.post("https://video-library-backend-1.ashishgupta08.repl.co/savedVideos", postData, axiosConfig)
                     savedDispatch({ type: "ADD-TO-SAVEDVIDEOS", payload: video });
                     videoPlayerDispatch({ type: "SAVED", payload: true });
                     openSuccessSnackbar('Added to Saved Videos', 2000)
@@ -89,7 +89,7 @@ export function VideoPlayer() {
     const addPlaylistHandler = async (video, playlist, action) => {
         try {
             if (authState.isUserLoggedIn) {
-                await axios.patch(`https://video-library-backend.ashishgupta08.repl.co/playlist/${playlist._id}`, { videoId: video._id }, axiosConfig)
+                await axios.patch(`https://video-library-backend-1.ashishgupta08.repl.co/playlist/${playlist._id}`, { videoId: video._id }, axiosConfig)
                 playlistDispatch({ type: "ADD-TO-PLAYLIST", payload: { playlist: playlist._id, video: video } });
                 videoPlayerDispatch({ type: "OPEN-MODAL", payload: "modal" })
                 openSuccessSnackbar('Added to Playlist.', 2000)
@@ -107,7 +107,7 @@ export function VideoPlayer() {
     const removePlaylistHandler = async (video, playlist) => {
         try {
             if (authState.isUserLoggedIn) {
-                await axios.delete(`https://video-library-backend.ashishgupta08.repl.co/playlist/${playlist._id}`, axiosConfig, { videoId: video._id })
+                await axios.delete(`https://video-library-backend-1.ashishgupta08.repl.co/playlist/${playlist._id}`, axiosConfig, { videoId: video._id })
                 playlistDispatch({ type: "REMOVE-FROM-PLAYLIST", payload: { playlist: playlist._id, video: video } });
                 videoPlayerDispatch({ type: "OPEN-MODAL", payload: "modal" })
                 openSuccessSnackbar('Removed from Playlist.', 2000)
@@ -125,7 +125,7 @@ export function VideoPlayer() {
     const createPlaylistHandler = async (video) => {
         try {
             if (authState.isUserLoggedIn) {
-                const { data: { result } } = await axios.post("https://video-library-backend.ashishgupta08.repl.co/playlist", { playlistName: videoPlayerState.playlistName, videoId: video._id }, axiosConfig)
+                const { data: { result } } = await axios.post("https://video-library-backend-1.ashishgupta08.repl.co/playlist", { playlistName: videoPlayerState.playlistName, videoId: video._id }, axiosConfig)
                 playlistDispatch({ type: "CREATE-PLAYLIST", payload: result });
                 videoPlayerDispatch({ type: "NEW-PLAYLIST", payload: false });
                 videoPlayerDispatch({ type: "OPEN-MODAL", payload: "modal" })

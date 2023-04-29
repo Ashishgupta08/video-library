@@ -18,7 +18,7 @@ export function Login() {
 
     const login = async (credentials) => {
         try {
-            const { data: { result }} = await axios.post("https://video-library-backend.ashishgupta08.repl.co/user/login", { username:credentials.username, password:credentials.password } );
+            const { data: { result }} = await axios.post("https://video-library-backend-1.ashishgupta08.repl.co/user/login", { username:credentials.username, password:credentials.password } );
             localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: result }))
             authDispatch({ type:"LOGIN", payload: result });
             openSuccessSnackbar('Successfully logged in', 2000);

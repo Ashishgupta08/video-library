@@ -9,7 +9,7 @@ export function VideosProvider({children}){
 
     useEffect(()=>{
         (async function(){
-            const { data: { result } } = await axios.get("https://video-library-backend.ashishgupta08.repl.co/video");
+            const { data: { result } } = await axios.get("https://video-library-backend-1.ashishgupta08.repl.co/video");
             setVideos(result)
         })()
     },[])

@@ -19,7 +19,7 @@ export function Signup() {
     const signup = async (credentials) => {
         try {
             console.log(credentials)
-            const { data: { result }} = await axios.post("https://video-library-backend.ashishgupta08.repl.co/user/signup", { username:credentials.username, password:credentials.password, name:credentials.name, email:credentials.email } );
+            const { data: { result }} = await axios.post("https://video-library-backend-1.ashishgupta08.repl.co/user/signup", { username:credentials.username, password:credentials.password, name:credentials.name, email:credentials.email } );
             localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: result }))
             authDispatch({ type:"LOGIN", payload: result });
             openSuccessSnackbar('Successfully logged in', 2000);
